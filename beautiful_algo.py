@@ -1,4 +1,4 @@
-﻿import math
+import math
 import time
 
 def is_semiprime(n):
@@ -215,7 +215,7 @@ def find_beautiful_triangular_numbers(limit_T):
 
     print("Beautiful Triangular Numbers:")
     for triangle in beautiful_triangles:
-        print(f"Triangular Number: {triangle['Beautiful Triangular Number']}, Side Length: {triangle['Side Length (n)']}")
+        print(f"Triangular Number: {triangle['Triangular Number']}, Side Length: {triangle['Side Length (n)']}")
         for idx, section in enumerate(triangle['Sections']):
             print(f"  Section {idx+1}: Columns = {section['Columns']}, Dots = {section['Dots']}")
         print()
