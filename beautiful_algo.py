@@ -1,5 +1,6 @@
 import math
 import time
+import matplotlib.pyplot as plt  # Necessary for plotting the triangle
 
 def is_semiprime(n):
     """
@@ -31,7 +32,7 @@ def is_semiprime(n):
 
 def apply_filters(T, n):
     """
-    Applies the filtering conditions to determine if T is a beautiful triangular number. 
+    Applies the filtering conditions to determine if T is a beautiful triangular number.
     These filters are applied primarily to exclude non-beautiful triangular numbers, improving computational efficiency.
     """
     # Since T = n(n+1)//2, T is triangular
@@ -145,9 +146,30 @@ def analyze_triangle_and_rectangle(T, n, median_length):
     return sections
 
 """def draw_sigma_triangle(total_dots):
-    # Draws a sigma triangle based on the total number of dots.
-    # This visual representation helps verify the geometric properties of the triangular number.
-"""
+    # This visual representation serves as a verification tool.
+    # Since all calculations are performed arithmetically, validating each step through
+    # a visual check ensures alignment with expected geometric properties.
+
+    # Calculate side length from total_dots
+    n = int((2 * total_dots) ** 0.5)
+    if n * (n + 1) // 2 != total_dots:
+        print(f"{total_dots} is not a perfect triangular number.")
+        return
+
+    side_length = n
+
+    plt.figure(figsize=(8, 8))
+
+    for row in range(n):
+        for col in range(row + 1):
+            plt.plot(col, -row, 'bo', markersize=5)
+
+    plt.xticks(range(-n, n + 1))
+    plt.yticks(range(-n, n + 1))
+
+    plt.axis('equal')
+    plt.title(f"Sigma Triangle with {total_dots} Dots")
+    plt.show()"""
 
 def find_beautiful_triangular_numbers(limit_T):
     """
@@ -158,7 +180,6 @@ def find_beautiful_triangular_numbers(limit_T):
 
     total_T_checked = 0
     after_filters = 0
-    filtered_numbers = []
     last_reported_percentage = 0
 
     start_time = time.time()
@@ -198,6 +219,10 @@ def find_beautiful_triangular_numbers(limit_T):
             "Sections": sections
         }
         beautiful_triangles.append(data)
+
+        # Visualize the triangle
+        # print(f"\nFound Beautiful Triangular Number: {T}, Side Length: {n_check}")
+        # draw_sigma_triangle(T)
 
         # Update progress
         progress_percentage = (n / limit_n) * 100
