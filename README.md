@@ -6,7 +6,7 @@ This project presents a **new algorithm** for identifying perfect numbers by lev
 ## Concept and Structure
 
 ### 1. Triangular Numbers and Sigma Rectangle
-The foundation of this algorithm is the **triangular number** \( T \), calculated as the sum \( T = 1 + 2 + 3 + \dots + n \), where **side length** \( n \) represents the last integer in the sequence. This triangle is aligned along the x-axis, with one vertex at the origin \(0, 0\).
+The foundation of this algorithm is the **triangular number** \( T \), calculated as the sum \( T = 1 + 2 + 3 + ... + n \), where **side length** \( n \) represents the last integer in the sequence. This triangle is aligned along the x-axis, with one vertex at the origin \(0, 0\).
 
 To analyze and validate the properties of a triangular number, we mirror the triangular shape to form a **sigma rectangle** \( R \) by combining two triangles of length \( T \) (i.e., \( T + T = R \)). This rectangle provides a structured framework to verify if a triangular number is perfect by examining both its geometric and divisional properties.
 
@@ -48,5 +48,14 @@ This repository includes Python scripts to:
 2. **Drawing the Structure**: The code includes optional drawing functions to visualize the structure of beautiful triangular numbers. By default, these drawing lines are **commented out** to optimize performance. To view the geometric structure, simply **uncomment** the relevant lines in the code.
 
 3. **Performance Optimization**: This code currently runs on a CPU. A version optimized for GPU computation is under development and will be released in a future update.
+
+4. **Note on the Inclusion of the Number 6**
+
+One interesting exception in the results of this algorithm is the number 6. Although the algorithm identifies 6 as a "beautiful triangular number," it does not strictly align with the geometric and divisor-based structure expected of such numbers. The inclusion of 6 occurs because:
+
+- Semiprime Structure: As the product of two primes, 6=2×3, 6 satisfies the initial divisibility checks without requiring additional sections in the sigma rectangle structure.
+- Triangular Properties: 6 is a triangular number that also happens to be the smallest perfect number, as 6=1+2+3. These properties allow 6 to meet the initial checks set by the algorithm, even though it bypasses the layered structure needed for larger beautiful triangular numbers.
+
+This behavior is not a bug but rather an artifact of 6’s simplicity. Its inclusion provides insight into the algorithm's behavior with small numbers and highlights the unique mathematical characteristics of 6.
 
 This project not only redefines perfect numbers through beautiful triangular structures but also opens a pathway for further exploration of efficient, incremental methods in number theory.
