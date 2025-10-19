@@ -1,7 +1,8 @@
-# Beautiful Triangular Numbers: Redefining Perfect Numbers
+# Perfect Numbers via the σ-Rectangle *(ex “beautiful numbers”; historical label only—no distinct class)*
 
 ## Overview
-This project presents a **new algorithm** for identifying perfect numbers by leveraging **beautiful triangular numbers**. By discovering and implementing a unique pattern in the geometric structure of triangular numbers, this approach systematically redefines how we search for perfect numbers. Unlike traditional methods that focus solely on divisibility, this algorithm integrates both divisibility and geometric properties in an efficient, incremental way to reveal perfect numbers within a carefully structured framework.
+This project presents a **new algorithm** for identifying perfect numbers using the **sigma-rectangle (SR)** built from triangular numbers. The algorithm **starts by enumerating triangular numbers** $T_k=\frac{k(k+1)}{2}$ and, for each $k$, tests the SR pattern on the $k\times(k+1)$ rectangle with parameters $k$ and $L=\frac{k+1}{2}$ (with $\gcd(k,L)=1$). The SR framework distinguishes the **SR median** from the **middle column** and uses the divisor pairing $d\mapsto M/d$ within the rectangle to validate $\sigma(M)=2M$. Crucially, this method **does not rely on Mersenne primes**; it couples divisibility with the SR structural constraints to efficiently and incrementally reveal perfect numbers. *(Formerly called “beautiful numbers”; this was only a working label and does not denote a different class of integers.)*
+
 
 ## Concept and Structure
 
